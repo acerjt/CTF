@@ -1,0 +1,17 @@
+#!/usr/bin/python3
+
+character = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+ar = [[0 for j in range(26)] for i in range(26)]
+for i in range(len(character)):
+    c = character[i:] + character[:i]
+    print(c)
+    for j in range(len(c)):
+        ar[i][j] = c[j]
+message = "llkjmlmpadkkc".upper()
+key = "thisisalilkey".upper()
+s = ''
+for i in range(len(message)):
+    for j in range(26):
+        if ar[ord(key[i]) - 65][j] == message[i]:
+            s += ar[0][j]
+print(s)
